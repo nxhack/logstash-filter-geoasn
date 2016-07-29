@@ -1,18 +1,3 @@
-# 3.0.1
-  - [internal] fix utf-8 encoding of spec file for failing test
-
-# 3.0.0
- - GA release of GeoIP2 support to be compatible with LS 2.x
-
-# 3.0.0-beta3
- - Return empty result when IP lookup fails for location field (#70)
-
-# 3.0.0-beta2
- - Internal: Actually include the vendored jars
-
-# 3.0.0-beta1 
- - Changed plugin to use GeoIP2 database. See http://dev.maxmind.com/geoip/geoip2/whats-new-in-geoip2/
-
 # 2.0.7
   - Depend on logstash-core-plugin-api instead of logstash-core, removing the need to mass update plugins on major releases of logstash
 # 2.0.6

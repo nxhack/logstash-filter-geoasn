@@ -1,6 +1,7 @@
 # Logstash Plugin
 
-[![Travis Build Status](https://travis-ci.org/logstash-plugins/logstash-filter-geoip.svg)](https://travis-ci.org/logstash-plugins/logstash-filter-geoip)
+[![Build
+Status](http://build-eu-00.elastic.co/view/LS%20Plugins/view/LS%20Filters/job/logstash-plugin-filter-geoip-unit/badge/icon)](http://build-eu-00.elastic.co/view/LS%20Plugins/view/LS%20Filters/job/logstash-plugin-filter-geoip-unit/)
 
 This is a plugin for [Logstash](https://github.com/elastic/logstash).
 
@@ -45,12 +46,6 @@ bundle install
 bundle exec rake vendor
 ```
 
-- Install jar dependencies
-
-```
-bundle exec rake install_jars
-```
-
 - Run tests
 
 ```sh
@@ -67,12 +62,7 @@ gem "logstash-filter-awesome", :path => "/your/local/logstash-filter-awesome"
 ```
 - Install plugin
 ```sh
-# Logstash 2.3 and higher
-bin/logstash-plugin install --no-verify
-
-# Prior to Logstash 2.3
 bin/plugin install --no-verify
-
 ```
 - Run Logstash with your plugin
 ```sh
@@ -90,12 +80,7 @@ gem build logstash-filter-awesome.gemspec
 ```
 - Install the plugin from the Logstash home
 ```sh
-# Logstash 2.3 and higher
-bin/logstash-plugin install --no-verify
-
-# Prior to Logstash 2.3
-bin/plugin install --no-verify
-
+bin/plugin install /your/local/plugin/logstash-filter-awesome.gem
 ```
 - Start Logstash and proceed to test the plugin
 
