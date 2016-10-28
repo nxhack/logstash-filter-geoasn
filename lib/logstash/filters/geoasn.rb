@@ -135,14 +135,14 @@ class LogStash::Filters::GeoASN < LogStash::Filters::Base
   def apply_geodata(geo_data_hash, event)
     # don't do anything more if the lookup result is nil?
     return false if geo_data_hash.nil?
-    # only set the event[@target] if the lookup result is not nil: BWC
-    event[@target] = {} if event[@target].nil?
+    # only set the event.se(@target) if the lookup result is not nil: BWC
+    event.set(@target, {}) if event.get(@target).nil?
     # don't do anything more if the lookup result is empty?
     return false if geo_data_hash.empty?
     geo_data_hash.each do |key, value|
       if @no_fields || @fields.include?(key)
         # can't dup numerics
-        event["[#{@target}][#{key}]"] = value.is_a?(Numeric) ? value : value.dup
+        event.set("[#{@target}][#{key}]", value.is_a?(Numeric) ? value : value.dup)
       end
     end # geo_data_hash.each
     true
@@ -151,7 +151,7 @@ class LogStash::Filters::GeoASN < LogStash::Filters::Base
   def get_geo_data(event)
     # pure function, must control return value
     result = {}
-    ip = event[@source]
+    ip = event.get(@source)
     ip = ip.first if ip.is_a? Array
     return nil if ip.nil?
     begin
