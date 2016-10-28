@@ -135,7 +135,7 @@ class LogStash::Filters::GeoASN < LogStash::Filters::Base
   def apply_geodata(geo_data_hash, event)
     # don't do anything more if the lookup result is nil?
     return false if geo_data_hash.nil?
-    # only set the event.se(@target) if the lookup result is not nil: BWC
+    # only set the event.set(@target) if the lookup result is not nil: BWC
     event.set(@target, {}) if event.get(@target).nil?
     # don't do anything more if the lookup result is empty?
     return false if geo_data_hash.empty?
