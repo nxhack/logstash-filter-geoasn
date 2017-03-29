@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
 
   s.name            = 'logstash-filter-geoasn'
-  s.version         = '4.0.3'
+  s.version         = '4.0.6'
   s.licenses        = ['Apache-2.0']
   s.summary         = "$summary"
   s.description     = "This gem is a logstash plugin required to be installed on top of the Logstash core pipeline using $LS_HOME/bin/plugin install gemname. This gem is not a stand-alone program"
@@ -9,6 +9,7 @@ Gem::Specification.new do |s|
   s.email           = 'info@elastic.co'
   s.homepage        = "http://www.elastic.co/guide/en/logstash/current/index.html"
   s.require_paths = ["lib"]
+  s.platform      = "java"
 
   # Files
   s.files = Dir['lib/**/*','spec/**/*','vendor/**/*','*.gemspec','*.md','CONTRIBUTORS','Gemfile','LICENSE','NOTICE.TXT']
@@ -25,6 +26,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'geoip', '~> 1.3', '>= 1.3.2'
   s.add_runtime_dependency 'lru_redux', '~> 1.1', '>= 1.1.0'
 
-  s.add_development_dependency 'logstash-devutils', '~> 0'
-end
+  s.add_development_dependency "jar-dependencies"
 
+  s.add_development_dependency 'logstash-devutils'
+end
