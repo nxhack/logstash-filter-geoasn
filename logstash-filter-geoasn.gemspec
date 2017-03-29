@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'lru_redux', '~> 1.1', '>= 1.1.0'
 
   s.add_development_dependency "jar-dependencies"
-  s.add_development_dependency 'ruby-maven', '~> 3.3.11'
+  s.add_development_dependency 'ruby-maven', '~> 3.3'
 
   s.add_development_dependency 'logstash-devutils'
 end
